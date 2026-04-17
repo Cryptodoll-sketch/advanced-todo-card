@@ -118,3 +118,46 @@ cards.forEach(card => {
     }
   });
 });
+
+
+
+// TIME LOGIC //
+function updateTime() {
+  document.querySelectorAll('[data-testid="test-todo-card"]').forEach(card => {
+    const timeEl = card.querySelector('[data-testid="test-todo-time-remaining"]');
+    const dueDateEl = card.querySelector('[data-testid="test-todo-due-date"]');
+    const status = card.querySelector('[data-testid="test-todo-status"]')?.textContent;
+
+    if (!timeEl || !dueDateEl) return;
+
+    if (status === "Done") {
+      timeEl.textContent = "Completed";
+      return;
+    }
+
+    const due = new Date(dueDateEl.getAttribute("datetime"));
+    if (isNaN(due.getTime())) return;
+
+    const diff = due - new Date();
+
+    const mins = Math.floor(diff / 60000);
+    const hours = Math.floor(diff / 3600000);
+    const days = Math.floor(diff / 86400000);
+
+    if (diff > 0) {
+      if (days > 0) {
+        timeEl.textContent = `Due in ${days} day(s)`;
+      } else if (hours > 0) {
+        timeEl.textContent = `Due in ${hours} hour(s)`;
+      } else {
+        timeEl.textContent = `Due in ${mins} minute(s)`;
+      }
+    } else {
+      const overdue = Math.abs(mins);
+      timeEl.textContent = `Overdue by ${overdue} minute(s)`;
+    }
+  });
+}
+
+updateTime();
+setInterval(updateTime, 60000);
