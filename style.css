@@ -1,0 +1,119 @@
+body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e6f3ff 0%, #f7fafc 100%);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    article {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (min-width: 720px) {
+      article {
+        width: calc(50% - 10px);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      article {
+        width: calc(33.333% - 13.333px);
+      }
+    }
+
+    .done h3, .done p {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .high { background: #feb2b2; color: #9b2c2c; }
+    .medium { background: #faf089; color: #744210; }
+    .low { background: #9ae6b4; color: #22543d; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag {
+      background: #e2e8f0;
+      color: #2d3748;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #4a5568;
+      transition: color 0.2s ease;
+    }
+
+    button:focus {
+      outline: 2px solid #2b6cb0;
+    }
+
+    button[data-testid="test-todo-edit-button"]:hover {
+      color: #1e40af;
+    }
+
+    button[data-testid="test-todo-delete-button"]:hover {
+      color: #dc2626;
+    }
+
+    .edit-input, .edit-textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .edit-textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
