@@ -161,3 +161,18 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 60000);
+
+
+// DELETE FUNCTION //
+
+cards.forEach(card => {
+  const deleteBtn = card.querySelector('[data-testid="test-todo-delete-button"]');
+
+  deleteBtn.addEventListener("click", () => {
+    const confirmDelete = confirm("Are you sure you want to delete this task?");
+
+    if (confirmDelete) {
+      card.remove();
+    }
+  });
+});
