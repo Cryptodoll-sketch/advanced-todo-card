@@ -96,3 +96,25 @@ cards.forEach(card => {
     viewMode.style.display = "block";
   });
 });
+
+
+// EXPAND / COLLAPSE //
+
+cards.forEach(card => {
+  const toggleBtn = card.querySelector('[data-testid="test-todo-expand-toggle"]');
+  const collapsible = card.querySelector('[data-testid="test-todo-collapsible-section"]');
+
+  toggleBtn.addEventListener("click", () => {
+    const isHidden = collapsible.hasAttribute("hidden");
+
+    if (isHidden) {
+      collapsible.removeAttribute("hidden");
+      toggleBtn.setAttribute("aria-expanded", "true");
+      toggleBtn.textContent = "Collapse";
+    } else {
+      collapsible.setAttribute("hidden", "");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      toggleBtn.textContent = "Expand";
+    }
+  });
+});
