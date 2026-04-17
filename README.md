@@ -9,27 +9,14 @@ Instead of a static UI, the card now behaves more like a mini application with e
 
 ## 🌐 Live Demo
 
-👉 https://your-live-url-here.com
+👉 https://advanced-todocard.netlify.app
 
 
 ---
 
 ## 📸 Screenshots
 
-> You can add screenshots after pushing them to your repository.
 
-Example:
-
-```
-/screenshots
-  ├── desktop-view.png
-  ├── edit-mode.png
-  ├── expanded-view.png
-```
-
-Then reference them like this:
-
-```md
 ### Desktop View
 ![Desktop View](./screenshots/desktop-view.png)
 
@@ -37,8 +24,7 @@ Then reference them like this:
 ![Edit Mode](./screenshots/edit-mode.png)
 
 ### Expanded State
-![Expanded View](./screenshots/expanded-view.png)
-```
+![Expanded View](./screenshots/expandable-view.png)
 
 ---
 
